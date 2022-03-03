@@ -79,7 +79,7 @@ const Layout = (pageProps) => {
           }}
         />
         <title>
-          {pageProps.title ? pageProps.title : "Транссексуалы города Москвы"}{" "}
+          {pageProps.title ? pageProps.title : "Услуги города Москвы"}{" "}
         </title>
       </Head>
       {!pageProps.hideHeader && (

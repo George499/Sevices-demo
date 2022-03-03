@@ -50,7 +50,7 @@ const Header = (props) => {
               <Link href="/" passHref>
                 <a className="pl-4 navbar-brand selfCenter">
                   {isSlim && (
-                    <p className="m-0 mx-1 font-weight-bold">YOUR SEDUCTION</p>
+                    <p className="m-0 mx-1 font-weight-bold">SERVICES</p>
                   )}
                 </a>
               </Link>
@@ -161,7 +161,7 @@ const Header = (props) => {
                     <a className="py-0 navbar-brand">
                       {!isSlim && (
                         <p className="m-0 mx-1 pt-1 font-weight-bold">
-                          YOUR SEDUCTION
+                          SERVICES
                         </p>
                       )}
                     </a>

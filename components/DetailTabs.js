@@ -17,6 +17,8 @@ import DisqusComments from "../components/DisqusComments";
 import classnames from "classnames";
 
 const DetailTabs = ({ product }) => {
+  console.log(product);
+
   const { query } = useRouter();
 
   const [activeTab, setActiveTab] = useState(1);
@@ -27,25 +29,25 @@ const DetailTabs = ({ product }) => {
     if (activeTab !== tab) setActiveTab(tab);
   };
 
-  const setNewLocation = () => {
-    if (!mapsRef.current) {
-      console.log("no maps");
-      return;
-    }
+  // const setNewLocation = () => {
+  //   if (!mapsRef.current) {
+  //     console.log("no maps");
+  //     return;
+  //   }
 
-    console.log("set geocode");
-    mapsRef.current
-      .geocode(`город ${product.city.name}, метро ${product.metros[0].name}`)
-      .then((result) => {
-        const coords = result.geoObjects.get(0).geometry.getCoordinates();
-        setCoords(coords);
-      });
-  };
+  //   console.log("set geocode");
+  //   mapsRef.current
+  //     .geocode(`город ${product.city.name}, метро ${product.metros[0].name}`)
+  //     .then((result) => {
+  //       const coords = result.geoObjects.get(0).geometry.getCoordinates();
+  //       setCoords(coords);
+  //     });
+  // };
 
-  useEffect(() => {
-    console.log("after render");
-    setNewLocation();
-  }, [product.city.name, product.metros[0].name]);
+  // useEffect(() => {
+  //   console.log("after render");
+  //   setNewLocation();
+  // }, [product.city.name, product.metros[0].name]);
 
   return (
     <section className="mt-0 h-25">
@@ -221,7 +223,7 @@ const DetailTabs = ({ product }) => {
                     <th className="text-uppercase font-weight-normal pl-0">
                       Город
                     </th>
-                    <td className="text-muted">{product.city.name}</td>
+                    {/* <td className="text-muted">{product.city.name}</td> */}
                   </tr>
                   <tr>
                     <th className="text-uppercase font-weight-normal pl-0">
@@ -245,7 +247,7 @@ const DetailTabs = ({ product }) => {
                 width="100%"
                 onLoad={(ymaps) => {
                   mapsRef.current = ymaps;
-                  setNewLocation();
+                  // setNewLocation();
                 }}
                 state={
                   coords

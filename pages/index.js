@@ -40,7 +40,6 @@ export async function getStaticProps() {
   const randomThree = (a, n) =>
     a.sort(() => Math.random() - Math.random()).slice(0, n);
 
-  const randomAlbums = randomThree(albums, 3);
   const randomSix = randomThree(cardPhotos, 8);
   return {
     props: {
@@ -59,7 +58,7 @@ export async function getStaticProps() {
       headerAbsolute: true,
       bgHoverPurple: true,
       fixedBottom: true,
-      title: "Транссексуалы города Москвы",
+      title: "Услуги города Москвы",
     },
     revalidate: 60,
   };
@@ -67,6 +66,7 @@ export async function getStaticProps() {
 
 const Home = (props) => {
   const { albums, cardPhotos } = props;
+  console.log(cardPhotos);
 
   return (
     <>

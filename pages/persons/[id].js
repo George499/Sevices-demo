@@ -55,10 +55,7 @@ export async function getServerSideProps(ctx) {
       personsData,
       navigation,
       description: personsData.opisanie.replace(/<br\s*\/?>/gi, " "),
-      title: `Транс ${personsData.name} снять
-      ${personsData.city.name === "Moscow" ? "в Москве" : ""}, метро
-      ${personsData.metros[0].name} за ${personsData.price}Р в 1 час для
-      ${personsData.uslugis.map((service) => `${service.name}`)}`,
+
       breadcrumbs: [
         {
           name: "Домой",
